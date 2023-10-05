@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## CREATED NEXT APP 
+ - npx create-next-app@latest 
 
-## Getting Started
+## FILE BASED ROUTING 
+ - Just CREATE folder (eg about) to create route and create page.js file inside folder 
+ - In react we used to use react-router-dom package
 
-First, run the development server:
+## ADDING CSS
+ - CREATE styles FOLDER inside app to add stylesheets 
+ - ADD filename.module.css files in that folder for unique css for components, later we'll 
+    import the file in that component
+ - globals.css applies css to all files by default
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## LAYOUT (CODE REUSE)
+ - CREATE components FOLDER inside app and add components there(eg Header.js, Footer.js ,etc)
+ - ADD the common components (like Header, Footer) which are in every page AT layout.js
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## IMAGE AND LINKS
+ - import Image from 'next/image'
+   <Img src="" height={} width={} />
+    -> automatic optimization, (src, width and height )important    / also need to just specify '/imgname.ext' in src attribute to take image from public folder
+    -> IF USING IMAGE outside folders from fome domain , need to add that domain in next.config.js
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+ - import Link from 'next/link'
+    <Link href=""></Link>     
+    -> In react we need to use anchor after link but not here, it's like HTML link but doesnot 
+        refresh page
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## NEXT FONT COMPONENT
+ - can use font by different ways from next/fonts
+ - can use google fonts as well look at documentation for more
 
-## Learn More
+## NESTED AND DYNAMIC ROUTE
+ - create FOLDER inside ROUTE folder for nesting route
+ - create a SLUG for creating dynamic routing
+   for this create FOLDER as [anyname], then create page.js inside folder
+   -> then create link eg <Link href={`/movie/${maybeID}`}>GOTO</Link> inside movie ROUTE will render the dynamic route page
+   ->NOW when you hit the link you are rendered to dynamic route page inside movie 
+     there you'll get ID as __ Page({params}){ params.ID}
 
-To learn more about Next.js, take a look at the following resources:
+## APP/loading.js FILE
+ - In next.js Just CREATE loading.js file in app directory and that file will be displayed when
+   page is being loaded :) that easy
+   (tips: goto loading.io site to get loading page design)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## APP/not-found.js FILE
+- If user is requesting route not available. We can just create not-found.js in app dir. and 
+   it will be shown
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## USED SITES
+ - shapedivider.app -> to add shape at bottom of page 
+ - npm i react-icons -> for adding icons , then goto to react-icons site and import and add
