@@ -47,6 +47,32 @@
 - If user is requesting route not available. We can just create not-found.js in app dir. and 
    it will be shown
 
+## CLIENT VS SERVER COMPONENTS
+- by default components are server , use client;   is used to make it client 
+- there are different scenerios in which we use either of them look at next.js site
+
+## INTERACTING WITH DATABASE
+- Here we are using contact form for interaction
+- CREATE mongodb account, CREATE project, CREATE database
+   -npm install mongodb
+   -npm install mongoose
+- For connection there's setup code search in GOOGLE/ChatGPT
+   - CREATE folder : 'utils' inside 'src'  and file 'dbCon.js' inside utils
+      CLICK ON : connect -> driver -> copyConnnectionString(add to .env.local as MONGODB_URL(replace<password> and between/databasename?))
+
+   - CREATE folder: 'models' inside 'src' there create db schemas  and model
+   eg contact.js for contact -> import mongoose and create schema
+
+- After dbConn and creating schema - we used to use express for getting data and adding db but here is no backend soo..
+ # APP/API/ROUTE.JS
+ - inside APP/API/ -we'll hit contact page in this case by - CREATE folder 'contact' ->create file route.js
+        -> THIS WILL WORK AS : http://localhost:300/api/contact call from postman 
+        -> SO INSIDE THAT FILE WE'LL WRITE SERVER CODE FOR HANDELING ROUTE
+        -> then we'll call that page from frontend(also in next/acts as fullstack eg from contactForm component|handleSubmit)
+-add mongoose to next.config.js
+
+
+
 
 
 ## USED SITES
